@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_main_graph.xml"
+    app:startDestination="@id/repositoryListFragment">
+
+    <fragment
+        android:id="@+id/repositoryListFragment"
+        android:name="com.example.github.repositories.home.HomeRepositoryListFragment"
+        android:label="RepositoryListFragment">
+        <action
+            android:id="@+id/action_repositoryListFragment_to_repositoryDetailFragment"
+            app:destination="@id/repositoryDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/repositoryDetailFragment"
+        android:name="com.example.github.repositories.user_detail.RepositoryDetailFragment"
+        android:label="Repository Detail"
+        tools:layout="@layout/fragment_repository_detail">
+        <argument
+            android:name="repository"
+            app:argType="com.example.github.repositories.common.local.RepositoryLocalModel"
+            app:nullable="false" />
+        <action
+            android:id="@+id/action_repositoryDetailFragment_to_userDetailWithRepositoryListFragment"
+            app:destination="@id/userDetailWithRepositoryListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/userDetailWithRepositoryListFragment"
+        android:name="com.example.github.repositories.user_detail_repository_list.UserDetailRepositoryListFragment"
+        android:label="User's repository list"
+        tools:layout="@layout/fragment_user_detail_with_repository_list">
+        <argument
+            android:name="owner"
+            app:argType="com.example.github.repositories.common.local.OwnerLocalModel"
+            app:nullable="false" />
+        <action
+            android:id="@+id/action_userDetailWithRepositoryListFragment_to_repositoryDetailFragment"
+            app:destination="@id/repositoryDetailFragment"
+            app:popUpTo="@+id/repositoryDetailFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+</navigation>
