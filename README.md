@@ -55,11 +55,11 @@ Applications is showing github repositories as well as saving the bookmarks deta
 </p>
 
 <p>
-<img src="screenshots/architecture1.png" width="400"/>
+<img src="screenshots/architecture2.png" width="400"/>
 </p>
 
 <p>
-<img src="screenshots/architecture1.png" width="400"/>
+<img src="screenshots/architecture3.png" width="400"/>
 </p>
 
 ## UI Testing Screenshot
